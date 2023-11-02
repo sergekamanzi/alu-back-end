@@ -1,15 +1,22 @@
 #!/usr/bin/python3
+
+
 """get TODO list"""
+
+
 
 import csv
 import json
 import requests
 import sys
 if __name__ == "__main__":
+
     def getTodos(id):
         link = "https://jsonplaceholder.typicode.com/users/{}/todos".format(id)
         res = requests.get(link)
-        return json.loads(res.text)
+    
+    return json.loads(res.text)
+    
     link = "https://jsonplaceholder.typicode.com/users/"
     res = requests.get(link)
     users = json.loads(res.text)
